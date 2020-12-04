@@ -8,8 +8,29 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            DayOnePartOne();
-            DayOnePartTwo();
+            bool isRunning = true;
+            while (isRunning)
+            {
+                Console.Clear();
+                Console.WriteLine("-- Advent Of Code --");
+                Console.WriteLine("1) Dag 1");
+
+                Console.WriteLine("q) Avsluta");
+
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "1":
+                        DayOnePartOne();
+                        DayOnePartTwo();
+                        break;
+                    case "q":
+                        isRunning = false;
+                        continue;
+                    default:
+                        break;
+                }
+            }
         }
 
         static void DayOnePartOne()
@@ -40,10 +61,12 @@ namespace AdventOfCode
                     }
                 }
             }
+            Console.Clear();
             Console.WriteLine("Advent of Code, Dag 1, del 1");
             Console.WriteLine("{0} + {1} = 2020", first, second);
             Console.WriteLine("Produkten av {0} och {1} är {2}", first, second, produkt);
-            Console.WriteLine("\n");
+            Console.Write("\nTryck på en tangent för att fortsätta...");
+            Console.ReadKey();
         }
 
         static void DayOnePartTwo()
@@ -80,10 +103,12 @@ namespace AdventOfCode
 
                 }
             }
+            Console.Clear();
             Console.WriteLine("Advent of Code, Dag 1, del 2");
             Console.WriteLine("{0} + {1}  + {2} = 2020", first, second, third);
             Console.WriteLine("Produkten av {0} och {1} och {2} är {3}", first, second, third, produkt);
-            Console.WriteLine("\n");
+            Console.Write("\nTryck på en tangent för att fortsätta...");
+            Console.ReadKey();
         }
     }
 }
